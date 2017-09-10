@@ -13,8 +13,12 @@ export const Home = {
   header: 'Home'
 };
 
-export const Drawer = {
-  drawerOpen: 'DrawerOpen'
+export const Settings = {
+  header: 'Settings'
+};
+
+export const SloganList = {
+  header: 'Slogans'
 };
 
 export const AlertStrings = {

@@ -6,7 +6,7 @@ import {
   TouchableHighlightProperties,
   View
 } from 'react-native';
-import { styleConstants } from '../../../config/constants';
+import { STYLE_CONSTANTS } from '../../../config/constants';
 
 export interface Props extends TouchableHighlightProperties {
   children?: ReactNode;
@@ -19,9 +19,7 @@ function Button({ style, children, ...props }: Props) {
       style={[styles.button, style] as ViewStyle}
       underlayColor={'#00000055'}
     >
-      <View>
-        {children}
-      </View>
+      <View>{children}</View>
     </TouchableHighlight>
   );
 }
@@ -36,7 +34,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 5,
     borderColor: '#050505',
-    justifyContent: styleConstants.flexJustify.CENTER,
-    alignItems: styleConstants.flexJustify.CENTER
+    justifyContent: STYLE_CONSTANTS.flexJustify.CENTER,
+    alignItems: STYLE_CONSTANTS.flexJustify.CENTER
   } as ViewStyle
 });

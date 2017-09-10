@@ -17,7 +17,7 @@ type Direction =
 type FontStyle = 'normal' | 'italic';
 type TextAlign = 'center' | 'auto' | 'left' | 'right' | undefined;
 
-export const styleConstants = {
+export const STYLE_CONSTANTS = {
   position: {
     ABSOLUTE: 'absolute' as Position,
     RELATIVE: 'relative' as Position
@@ -74,7 +74,8 @@ export const styleConstants = {
   colors: {
     WHITE: '#ffffff',
     DEFAULT_GRAY: '#2F4F4F',
-    RED: '#7F0000'
+    PRIMARY: '#7F0000',
+    HIGHLIGHT: '#DAA520'
   }
 };
 

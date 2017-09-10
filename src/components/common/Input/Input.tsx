@@ -8,7 +8,7 @@ import {
   TextStyle
 } from 'react-native';
 import { Text } from '../../common';
-import { styleConstants } from '../../../config/constants';
+import { STYLE_CONSTANTS } from '../../../config/constants';
 
 export interface Props extends TextInputProperties {
   label?: string;
@@ -20,9 +20,7 @@ function Input({ label, inputStyle, style, ...props }: Props) {
 
   return (
     <View style={style}>
-      <Text.Label>
-        {label}
-      </Text.Label>
+      <Text.Label>{label}</Text.Label>
       <TextInput
         {...props}
         style={[styles.input, inputStyle] as TextStyle}
@@ -38,7 +36,7 @@ const styles = StyleSheet.create({
     padding: 5,
     borderWidth: 1,
     borderRadius: 10,
-    borderColor: styleConstants.colors.DEFAULT_GRAY
+    borderColor: STYLE_CONSTANTS.colors.DEFAULT_GRAY
   }
 });
 

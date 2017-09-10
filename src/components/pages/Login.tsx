@@ -6,7 +6,7 @@ import { Button, Input, Text } from '../common';
 import { Stores } from '../../config/strings';
 import { ApplicationStore } from '../../store/ApplicationStore';
 import { Login as strings } from '../../config/strings';
-import { rnComponentProps, styleConstants } from '../../config/constants';
+import { rnComponentProps, STYLE_CONSTANTS } from '../../config/constants';
 
 type Props = { store?: ApplicationStore };
 
@@ -62,9 +62,7 @@ export default class Login extends Component<Props, State> {
     return (
       <View style={styles.pageContainer}>
         <View style={styles.headerViewStyle}>
-          <Text.Title>
-            {strings.header}
-          </Text.Title>
+          <Text.Title>{strings.header}</Text.Title>
         </View>
         <View>
           <Input.Login
@@ -82,9 +80,7 @@ export default class Login extends Component<Props, State> {
         </View>
         <View style={styles.loginButtonContainer}>
           <Button.Default onPress={() => this._handleLoginPress()}>
-            <Text.ButtonText>
-              {strings.loginButton}
-            </Text.ButtonText>
+            <Text.ButtonText>{strings.loginButton}</Text.ButtonText>
           </Button.Default>
         </View>
       </View>
@@ -94,8 +90,8 @@ export default class Login extends Component<Props, State> {
 
 const styles = StyleSheet.create({
   loginButtonContainer: {
-    justifyContent: styleConstants.flexJustify.CENTER,
-    alignItems: styleConstants.flexJustify.CENTER,
+    justifyContent: STYLE_CONSTANTS.flexJustify.CENTER,
+    alignItems: STYLE_CONSTANTS.flexJustify.CENTER,
     width: '100%',
     height: 75,
     marginTop: 50
@@ -103,7 +99,7 @@ const styles = StyleSheet.create({
   headerViewStyle: {
     height: 200,
     width: '100%',
-    alignItems: styleConstants.flexAlign.CENTER,
+    alignItems: STYLE_CONSTANTS.flexAlign.CENTER,
     marginTop: 30
   } as ViewStyle,
   pageContainer: {

@@ -1,13 +1,13 @@
 import React, { ReactNode } from 'react';
 import { Text, TextProperties, StyleSheet, TextStyle } from 'react-native';
-import { styleConstants } from '../../../config/constants';
+import { STYLE_CONSTANTS } from '../../../config/constants';
 
 export type TextProps = TextProperties & { children?: ReactNode };
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: styleConstants.fontSize.MEDIUM,
-    color: styleConstants.colors.DEFAULT_GRAY
+    fontSize: STYLE_CONSTANTS.fontSize.MEDIUM,
+    color: STYLE_CONSTANTS.colors.DEFAULT_GRAY
   } as TextStyle
 });
 

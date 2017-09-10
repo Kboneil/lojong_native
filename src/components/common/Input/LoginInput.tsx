@@ -1,7 +1,7 @@
 import assert from 'assert';
 import React from 'react';
 import { StyleSheet, KeyboardType, TextStyle, ViewStyle } from 'react-native';
-import { styleConstants } from '../../../config/constants';
+import { STYLE_CONSTANTS } from '../../../config/constants';
 import Input from './Input';
 
 export interface Props {
@@ -35,14 +35,14 @@ const styles = StyleSheet.create({
     fontSize: 22,
     margin: 10,
     padding: 5,
-    textAlign: styleConstants.textAlign.CENTER
+    textAlign: STYLE_CONSTANTS.textAlign.CENTER
   } as TextStyle,
 
   label: {
     marginLeft: 0,
     fontSize: 20,
     fontWeight: '500',
-    textAlign: styleConstants.textAlign.CENTER
+    textAlign: STYLE_CONSTANTS.textAlign.CENTER
   } as TextStyle
 });
 

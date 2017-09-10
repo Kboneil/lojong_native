@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, ViewStyle, StyleSheet, TextStyle } from 'react-native';
 import Button from './Button';
-import { styleConstants } from '../../../config/constants';
+import { STYLE_CONSTANTS } from '../../../config/constants';
 
 interface Props {
   label?: string;
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 
   buttonText: {
     fontSize: 15,
-    color: styleConstants.colors.WHITE
+    color: STYLE_CONSTANTS.colors.WHITE
   } as TextStyle
 });
 
@@ -28,10 +28,7 @@ function HeaderButton({ label, style, onPress, children }: Props) {
   return (
     <Button style={[styles.button, style] as ViewStyle} onPress={onPress}>
       <View>
-        {label &&
-          <Text style={styles.buttonText}>
-            {label}
-          </Text>}
+        {label && <Text style={styles.buttonText}>{label}</Text>}
         {children}
       </View>
     </Button>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './index';
 import { Hamburger, BackArrow } from '../../config/images';
 import { Image, ViewStyle, StyleSheet } from 'react-native';
-import { styleConstants } from '../../config/constants';
+import { STYLE_CONSTANTS } from '../../config/constants';
 
 export interface Props {
   header: string;
@@ -16,7 +16,7 @@ export interface Props {
 
 const styles = StyleSheet.create({
   headerStyle: {
-    backgroundColor: styleConstants.colors.RED
+    backgroundColor: STYLE_CONSTANTS.colors.PRIMARY
   } as ViewStyle,
   headerTitle: {
     color: '#ffffff'
@@ -30,7 +30,7 @@ function Header(props: Props) {
       <Button.Header onPress={props.screenProps.openDrawer}>
         <Image
           source={Hamburger}
-          style={{ tintColor: styleConstants.colors.WHITE }}
+          style={{ tintColor: STYLE_CONSTANTS.colors.WHITE }}
         />
       </Button.Header>
     );
@@ -39,7 +39,7 @@ function Header(props: Props) {
       <Button.Header onPress={() => props.goBack()}>
         <Image
           source={BackArrow}
-          style={{ tintColor: styleConstants.colors.WHITE }}
+          style={{ tintColor: STYLE_CONSTANTS.colors.WHITE }}
         />
       </Button.Header>
     );

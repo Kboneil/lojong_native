@@ -4,7 +4,7 @@ import { View, StyleSheet, ViewStyle } from 'react-native';
 import { inject, observer } from 'mobx-react';
 import { Fade } from './components/common';
 import Login from './components/pages/Login';
-import Drawer from './components/navigators/Drawer';
+import Tab from './components/navigators/Tab';
 
 import { ApplicationStore } from './store/ApplicationStore';
 import { Stores } from './config/strings';
@@ -30,7 +30,7 @@ export default class Lojong extends Component<Props, State> {
             style={StyleSheet.absoluteFill as ViewStyle}
             visible={store.IsLoggedIn}
           >
-            <Drawer />
+            <Tab />
           </Fade>
 
           <Fade

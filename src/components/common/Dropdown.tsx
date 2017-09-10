@@ -2,7 +2,7 @@ import assert from 'assert';
 import React from 'react';
 import { View, Picker, StyleSheet, ViewStyle, TextStyle } from 'react-native';
 import { Dropdown as strings } from '../../config/strings';
-import { styleConstants } from '../../config/constants';
+import { STYLE_CONSTANTS } from '../../config/constants';
 import { Text } from './';
 
 export interface Props {
@@ -18,25 +18,24 @@ function Dropdown(props: Props) {
 
   return (
     <View style={styles.container}>
-      <Text.Label>
-        {props.label}
-      </Text.Label>
-      {props.value &&
+      <Text.Label>{props.label}</Text.Label>
+      {props.value && (
         <Picker
           style={styles.picker}
           mode="dropdown"
           selectedValue={props.value}
           onValueChange={itemValue => props.onSelect(itemValue)}
         >
-          {props.options.map(option =>
+          {props.options.map(option => (
             <Picker.Item
               label={option.name}
               value={option.id}
               key={option.id}
             />
-          )}
-        </Picker>}
-      {props.value === undefined &&
+          ))}
+        </Picker>
+      )}
+      {props.value === undefined && (
         <Picker
           style={styles.picker}
           mode="dropdown"
@@ -48,14 +47,15 @@ function Dropdown(props: Props) {
             value={undefined}
             key={strings.unselectedDropdown}
           />
-          {props.options.map(option =>
+          {props.options.map(option => (
             <Picker.Item
               label={option.name}
               value={option.id}
               key={option.id}
             />
-          )}
-        </Picker>}
+          ))}
+        </Picker>
+      )}
     </View>
   );
 }
@@ -63,7 +63,7 @@ function Dropdown(props: Props) {
 const styles = StyleSheet.create({
   container: {} as ViewStyle,
   label: {
-    fontSize: styleConstants.fontSize.MEDIUM
+    fontSize: STYLE_CONSTANTS.fontSize.MEDIUM
   } as TextStyle,
   picker: {
     marginLeft: 10
