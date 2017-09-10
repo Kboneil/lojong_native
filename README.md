@@ -2,12 +2,12 @@
 
 * This might be an option for daily slogan: [system notification](https://www.npmjs.com/package/react-native-system-notification)
 
-# Data Model
+### Data Model
 ```ts
 Slogans: {
     $slogan: {
         category: $category,
-        subategory: $subategory,
+        subcategory: $subcategory,
         number: number,
         sloganText: string,
         subtext: string
@@ -18,7 +18,7 @@ SloganDetails: {
         number: number,
         title: string,
     },
-    $subategory: {
+    $subcategory: {
         number: number,
         title: string,
     },
@@ -35,6 +35,7 @@ Users: {
         notificationTime: string,
         notificationIsRepeated: boolean,
         notificationCount: number,
+        //maybe these two should be pulled out?
         pastSlogans: {
             $slogan: string,
             time: string
@@ -56,7 +57,7 @@ comments: {
 }
 ```
 
-# This will be the Application State...
+### This will be the Application State...
 
 ```ts
 enum Frequency {
