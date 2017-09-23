@@ -1,6 +1,6 @@
 import assert from 'assert';
 import React, { Component } from 'react';
-import { View, StyleSheet, ViewStyle } from 'react-native';
+import { View, StyleSheet, ViewStyle, StatusBar } from 'react-native';
 import { inject, observer } from 'mobx-react';
 import { Fade } from './components/common';
 import Login from './components/pages/Login';
@@ -8,6 +8,7 @@ import Tab from './components/navigators/Tab';
 
 import { ApplicationStore } from './store/ApplicationStore';
 import { Stores } from './config/strings';
+import { STYLE_CONSTANTS } from './config/constants';
 
 type Props = { store?: ApplicationStore };
 
@@ -26,6 +27,10 @@ export default class Lojong extends Component<Props, State> {
     if (store) {
       return (
         <View style={StyleSheet.absoluteFill as ViewStyle}>
+          <StatusBar
+            backgroundColor={STYLE_CONSTANTS.colors.PRIMARY}
+            barStyle="light-content"
+          />
           <Fade
             style={StyleSheet.absoluteFill as ViewStyle}
             visible={store.IsLoggedIn}
